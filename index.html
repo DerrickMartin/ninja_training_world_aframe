@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Training</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-componenet@3.2.1/distr/aframe-animation-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+</head>
+<body>
+    <a-scene id="scene" physics="debug:true">
+        <a-sky color="#6EBAA7" scale="10 10 10"></a-sky>
+        <a-entity particle-system="preset: snow; particleCount: 1000"></a-entity>
+        <a-sound src="./Sakuya.mp3" autoplay="true" volume="0.5"></a-sound>
+        <a-camera><a-cursor></a-cursor></a-camera>
+        <a-plane color="grey" rotation="-90 0 0" scale="25 25 25"></a-plane>
+        <a-entity sphere-collider="objects: a-box;" super-hands id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
+        <a-entity sphere-collider="objects: a-box;" super-hands id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
+        <a-box
+            grabbable
+            position="-1.5 1.5 -3"
+            color="blue"
+            animation="property=rotation; from: 0 0 0; to: 360 360 0; dur:2000; startEvents:click;"
+        ></a-box>
+    </a-scene>
+</body>
+</html>
