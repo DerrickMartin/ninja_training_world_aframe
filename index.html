@@ -222,10 +222,15 @@
 </head>
 <body>
     <a-scene id="scene" physics="debug:true" renderer="antialias: false; logarithmicDepthBuffer:true">
-        <a-sky color="#6EBAA7" scale="10 10 10"></a-sky>
+        <a-sky src="./starynight.png" scale="20 20 20"></a-sky>
         <a-sound src="./Sakuya.mp3" autoplay="true" volume="0.5"></a-sound>
-        <a-camera><a-cursor></a-cursor></a-camera>
-        <a-plane color="grey" rotation="-90 0 0" scale="25 25 25"></a-plane>
+        <a-camera
+        camera
+        look-controls
+        wasd-controls>
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-plane material="src: ./animeGrass.jpeg; repeat: 6 6" rotation="-90 0 0" scale="55 55 55"></a-plane>
         <a-entity sphere-collider="objects: a-box;" super-hands id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
         <a-entity sphere-collider="objects: a-box;" super-hands id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
         <a-box
